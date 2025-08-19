@@ -1,17 +1,22 @@
 package dev.alberto;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        CuentaAhorros ca = new CuentaAhorros(15000, 12);
+        ca.consignar(2000);
+        ca.retirar(1000);
+        ca.extractoMensual();
+        System.out.println("Cuenta de Ahorros -> " + ca.imprimir());
+
+        
+        CuentaCorriente cc = new CuentaCorriente(2000, 12);
+        cc.retirar(5000); 
+        cc.consignar(4000); 
+        cc.extractoMensual();
+        System.out.println("Cuenta Corriente -> " + cc.imprimir());
     }
 }
